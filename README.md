@@ -39,6 +39,6 @@ The following endpoints are available in this application:
 
 ### 2. Get All Schools
 
-- **Endpoint**: `/schoolDB/listSchools`
+- **Endpoint**: `/schoolDB/listSchools/latitude,longitude`
 - **Method**: `GET`
-- **Description**: Fetches a list of all schools.
+- **Description**: Fetches a list of all schools and sorts them based on proximity to the user's location, and returns the sorted list.
