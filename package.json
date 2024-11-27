@@ -8,7 +8,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-win": "set NODE_ENV=dev&& node ./src",
+    "dev-mac": "export NODE_ENV=dev&& node ./src"
   },
   "keywords": [],
   "author": "",
