@@ -6,6 +6,7 @@ const connection = mysql.createConnection({
   user: process.env.DB_USERNAME, // Username for the MySQL database
   password: process.env.DB_PASSWORD, // Password for the MySQL user
   database: process.env.DB_DBNAME, // Name of the database to connect to
+  port: process.env.DB_PORT,
 });
 
 // Establish the database connection
