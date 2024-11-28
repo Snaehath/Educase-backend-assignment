@@ -47,6 +47,26 @@ router.post("/addSchool", (req, res) => {
   );
 });
 
+// Route to add sample values to database
+router.post("/sampleSchools", (req, res) => {
+  const tableName = "schools";
+
+  const sampleValues = `INSERT INTO ${tableName} (name, address, latitude, longitude) VALUES ?`;
+  const values = [
+    ["School A", "Main Street", 12.34, 56.78],
+    ["School B", "Second Street", 23.45, 67.89],
+    ["School C", "Third Avenue", 34.56, 78.9],
+    ["School D", "Fourth Lane", 45.67, 89.01],
+    ["School E", "Fifth Circle", 56.78, 90.12],
+  ];
+  db.query(sampleValues, [values], (err, result) => {
+    if (err) {
+      res.json(err.sqlMessage);
+    }
+    res.status(200).json("Number of records inserted: " + result.affectedRows);
+  });
+});
+
 // Route to list all schools sorted by proximity to user's location
 router.get("/listSchools/:coordinates", (req, res) => {
   const tableName = "schools";
